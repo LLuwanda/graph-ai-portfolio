@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Lameck Luwanda | Generative AI for Research</title>
+    <style>
+        :root {
+            --primary: #005f73;
+            --secondary: #0a9396;
+            --accent: #ee9b00;
+            --light: #e9d8a6;
+            --dark: #001219;
+            --gray: #94d2bd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: white;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') center/cover;
+            color: white;
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        .mission-statement {
+            font-style: italic;
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 1rem;
+            border-left: 3px solid var(--accent);
+        }
+        
+        nav {
+            background-color: var(--primary);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        nav a:hover {
+            background-color: var(--accent);
+        }
+        
+        section {
+            padding: 3rem 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .about-me {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .about-me p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .course-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .module {
+            background-color: white;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s;
+        }
+        
+        .module:hover {
+            transform: translateY(-5px);
+        }
+        
+        .module h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .module ul {
+            list-style-position: inside;
+            margin-left: 0.5rem;
+        }
+        
+        .module li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .submissions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .submission-card {
+            background-color: white;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-top: 3px solid var(--gray);
+        }
+        
+        .submission-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent);
+        }
+        
+        .submission-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .placeholder {
+            height: 150px;
+            background-color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-divider {
+            width: 100px;
+            height: 2px;
+            background-color: var(--accent);
+            margin: 1rem auto;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            
+            .course-modules, .submissions {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dr. Lameck Bonaventure Luwanda</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Generative AI for Work & Research Productivity</p>
+        <div class="mission-statement">
+            "Bridging global health research with cutting-edge AI technologies to transform healthcare delivery"
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#course">Course Details</a></li>
+            <li><a href="#submissions">Weekly Work</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about" class="about-me">
+        <h2>Research Profile</h2>
+        <div class="highlight-box">
+            <p>As a Global Health Expert and PhD candidate at the University of Lausanne, I specialize in healthcare quality improvement and digital health interventions. My work focuses on developing evidence-based solutions to enhance pediatric care in resource-limited settings.</p>
+            
+            <p>With extensive experience leading multidisciplinary research projects at Ifakara Health Institute and other renowned institutions, I bridge the gap between clinical practice, public health research, and technological innovation.</p>
+            
+            <p>This Generative AI course represents my commitment to integrating advanced computational tools with global health research to create scalable, impactful solutions.</p>
+        </div>
+    </section>
+    
+    <section id="course">
+        <h2>Course Overview</h2>
+        <div class="highlight-box">
+            <p><strong>Generative AI for Work & Research Productivity</strong> is an intensive 8-week program offered through the GRAPH Network at the University of Geneva. The course provides practical skills in:</p>
+            <ul>
+                <li>No-code AI tools for research automation</li>
+                <li>Data analysis and visualization with AI</li>
+                <li>Developing custom AI assistants for academic work</li>
+                <li>Enhancing research communication through generative AI</li>
+            </ul>
+        </div>
+        
+        <h3>Curriculum Modules</h3>
+        <div class="course-modules">
+            <div class="module">
+                <h3>Foundations of Generative AI</h3>
+                <ul>
+                    <li>LLM architecture and training</li>
+                    <li>Markdown/LaTeX generation</li>
+                    <li>Research website development</li>
+                    <li>AI presentation tools</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>AI-Driven Data Analysis</h3>
+                <ul>
+                    <li>Automated dataset processing</li>
+                    <li>Interactive dashboards</li>
+                    <li>Statistical analysis automation</li>
+                    <li>Report generation</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>Research Automation</h3>
+                <ul>
+                    <li>Literature review acceleration</li>
+                    <li>Text classification systems</li>
+                    <li>Knowledge synthesis workflows</li>
+                    <li>Automated summarization</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>Custom AI Assistants</h3>
+                <ul>
+                    <li>GPT architecture fundamentals</li>
+                    <li>Domain-specific chatbots</li>
+                    <li>Retrieval-augmented generation</li>
+                    <li>Knowledge base integration</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>Workflow Automation</h3>
+                <ul>
+                    <li>Email response systems</li>
+                    <li>AI agent orchestration</li>
+                    <li>Browser automation</li>
+                    <li>Task scheduling</li>
+                </ul>
+            </div>
+            
+            <div class="module">
+                <h3>Research Dissemination</h3>
+                <ul>
+                    <li>Audience-specific summaries</li>
+                    <li>Scientific visualization</li>
+                    <li>Video abstract generation</li>
+                    <li>Content scheduling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="submissions">
+        <h2>Course Submissions</h2>
+        <p>Weekly assignments and projects demonstrating applied AI solutions for health research:</p>
+        
+        <div class="submissions">
+            <div class="submission-card">
+                <h3>Module 1: Research Website</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>AI-generated research portfolio with dynamic content.</p>
+            </div>
+            
+            <div class="submission-card">
+                <h3>Module 2: Data Analysis</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>Automated pediatric health indicators dashboard.</p>
+            </div>
+            
+            <div class="submission-card">
+                <h3>Module 3: Literature Review</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>AI-accelerated systematic review on digital health.</p>
+            </div>
+            
+            <div class="submission-card">
+                <h3>Module 4: Research Assistant</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>Custom GPT for pediatric clinical guidelines.</p>
+            </div>
+            
+            <div class="submission-card">
+                <h3>Module 5: Workflow Automation</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>AI agent for research task management.</p>
+            </div>
+            
+            <div class="submission-card">
+                <h3>Module 6: Research Communication</h3>
+                <div class="placeholder">Project Preview</div>
+                <p>Multimedia research dissemination package.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-divider"></div>
+        <p>&copy; 2024 Dr. Lameck Bonaventure Luwanda</p>
+        <p>Connect via <a href="https://linkedin.com/in/lameckluwanda" style="color: var(--accent); text-decoration: none;">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
