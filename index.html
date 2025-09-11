@@ -141,6 +141,25 @@
             margin-bottom: 2rem;
             border-top: 4px solid var(--accent);
         }
+
+        /* Research profile layout */
+        .profile-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
         
         .course-modules {
             display: grid;
@@ -237,6 +256,16 @@
                 align-items: center;
                 gap: 0.5rem;
             }
+
+            .profile-box {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-text {
+                text-align: left;
+            }
             
             .course-modules, .submissions {
                 grid-template-columns: 1fr;
@@ -269,12 +298,17 @@
     
     <section id="about" class="about-me">
         <h2>Research Profile</h2>
-        <div class="highlight-box">
-            <p>As a Global Health Expert and PhD candidate at the University of Lausanne, I specialize in healthcare quality improvement and digital health interventions. My work focuses on developing evidence-based solutions to enhance pediatric care in resource-limited settings.</p>
+        <div class="highlight-box profile-box">
+            <img src="https://github.com/LLuwanda/graph-ai-portfolio/blob/main/supawork-photo-20250614T145501011Z.png?raw=true" 
+                 alt="Dr. Lameck Bonaventure Luwanda" class="profile-img">
             
-            <p>With extensive experience leading multidisciplinary research projects at Ifakara Health Institute and other renowned institutions, I bridge the gap between clinical practice, public health research, and technological innovation.</p>
-            
-            <p>This Generative AI course represents my commitment to integrating advanced computational tools with global health research to create scalable, impactful solutions.</p>
+            <div class="profile-text">
+                <p>As a Global Health Expert and PhD candidate at the University of Lausanne, I specialize in healthcare quality improvement and digital health interventions. My work focuses on developing evidence-based solutions to enhance pediatric care in resource-limited settings.</p>
+                
+                <p>With extensive experience leading multidisciplinary research projects at Ifakara Health Institute and other renowned institutions, I bridge the gap between clinical practice, public health research, and technological innovation.</p>
+                
+                <p>This Generative AI course represents my commitment to integrating advanced computational tools with global health research to create scalable, impactful solutions.</p>
+            </div>
         </div>
     </section>
     
@@ -408,12 +442,12 @@
     
     <footer>
         <div class="footer-divider"></div>
-        <p>&copy; 2024 Dr. Lameck Bonaventure Luwanda</p>
+        <p>&copy; 2025 Dr. Lameck Bonaventure Luwanda</p>
         <p>Connect via <a href="https://linkedin.com/in/lameckluwanda" style="color: var(--accent); text-decoration: none;">LinkedIn</a></p>
     </footer>
    
     <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/09/11/09/20250911092528-WKNCHAW3.js" defer></script>
+    <script src="https://files.bpcontent.cloud/2025/09/11/09/20250911092528-WKNCHAW3.js" defer></script>
     
 </body>
 </html>
